@@ -27,7 +27,7 @@ class Header extends React.Component {
       <nav>
         <div className="nav-wrapper #00897b teal darken-1 light">
           <Link 
-          to={ this.props.auth ? '/surveys' : '/' }
+          to='/'
           className="brand-logo">
             Feedbacker
            </Link>
