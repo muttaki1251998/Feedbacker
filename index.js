@@ -5,6 +5,7 @@ const authRoutes = require('./routes/authRoutes');
 const passport = require('passport');
 const cookieSession = require('cookie-session');
 require('./models/User');
+require('./models/Survey');
 require('./services/passport');
 
 mongoose.connect(keys.mongoURI, {
@@ -29,6 +30,7 @@ app.use(passport.session());
 
 authRoutes(app);
 require('./routes/billingRoutes')(app);
+require('./routes/surveyRoutes')(app);
 
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'));
@@ -42,3 +44,6 @@ if(process.env.NODE_ENV === 'production') {
 const PORT = process.env.PORT || 5000;
 app.listen(PORT);
 
+
+//Sendgrid Api key:
+// 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

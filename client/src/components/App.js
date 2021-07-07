@@ -5,8 +5,8 @@ import { fetchUser } from '../action';
 
 import Header from './Header';
 import Landing from './Landing';
-import Survey from './Survey';
 import Dashboard from './Dashboard';
+import SurveyNew from './Surveys/SurveyNew';
 
 class App extends React.Component {
 
@@ -20,9 +20,9 @@ class App extends React.Component {
         <BrowserRouter>
         <div>
           <Header />
-          <Route path="/" exact component={Landing} />
-          <Route path="/surveys" exact component={Dashboard} />
-          <Route path="/surveys/new" component={Survey} />
+          <Route exact path="/" component={Landing} />
+          <Route exact path="/surveys" component={Dashboard} />
+          <Route path="/surveys/new" component={SurveyNew} />
         </div>
         </BrowserRouter>
       </div>
